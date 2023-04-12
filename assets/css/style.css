@@ -1,0 +1,35 @@
+.forme__wrapper {
+  position: fixed;
+}
+.forme__wrapper--1 {
+  top: 0;
+  left: 0;
+}
+.forme__wrapper--2 {
+  left: -200px;
+  bottom: 50px;
+}
+.forme__wrapper--3 {
+  bottom: -300px;
+  right: -200px;
+}
+.forme__wrapper--4 {
+  bottom: 10px;
+  left: 400px;
+}
+.forme__wrapper--5 {
+  top: 20px;
+  right: 40px;
+}
+
+.move-img {
+  position: relative;
+  transition: transform 0.5s ease-out;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

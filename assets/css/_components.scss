@@ -1,0 +1,29 @@
+.forme__wrapper {
+    position: fixed;
+
+    &--1 {
+        top: 0;
+        left: 0; 
+    }
+    &--2 {
+        left: -200px;
+        bottom: 50px;
+    }
+    &--3 {
+        bottom: -300px;
+        right: -200px;
+    }
+    &--4 {
+        bottom: 10px;
+        left: 400px;
+    }
+    &--5 {
+        top: 20px;
+        right: 40px;
+    }
+}
+
+.move-img {
+    position: relative;
+    transition: transform 0.5s ease-out;
+}
