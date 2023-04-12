@@ -1,0 +1,111 @@
+.wrapper{
+  grid-template-areas:
+          "title title"
+          "draw cam"
+          "draw outils";
+  padding: 1rem 4rem 0.3rem 4rem;
+  height: 100%;
+  box-sizing: border-box;
+  grid-template-columns: 4fr min-content;
+  grid-template-rows: min-content min-content 1fr;
+  display: grid;
+  grid-column-gap: 3.4rem;
+
+  &__title{
+    grid-area: title;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    h1{
+      font-family: "Comic Neue", sans-serif;
+      font-weight: 500;
+      margin: 0 1.4rem;
+      font-size: 35px;
+    }
+    svg{
+      width: 50px;
+    }
+  }
+
+  &__drawbox{
+    grid-area: draw;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 18px -4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+  }
+
+  &__webcam{
+    grid-area: cam;
+  }
+
+  &__utils{
+    grid-area: outils;
+
+  }
+}
+
+.outils{
+  &__title{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__btn{
+    margin-top: 1.3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: .5rem;
+  }
+  &__box{
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    margin-top: 1rem;
+  }
+  &__box__colors{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr );
+    grid-gap: 1rem;
+  }
+  &__box__items{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+$colors: [
+  red, orange, gold, yellow,
+  darkblue, blue, cyan, lightblue,
+  darkgreen, green, lightgreen, white,
+  black, darkgrey, grey, lightgrey,
+  purple, violet, pink, brown
+  #c065c5, #36C9A6, #8D46E9, #4FD4FE, #FE6F4F, #FEEC4F
+];
+
+.col-box{
+  width: 4em;
+  height: 4em;
+  border: 8px solid white;
+  border-radius: 5px;
+  &.--active{
+    border: 8px solid #FFD874;
+  }
+  &-outils{
+    background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{}
+  }
+}
+
+
+
+@for $i from 1 through 16 {
+  #color-#{$i}{
+    background-color: nth($colors, $i);
+  }
+}
+

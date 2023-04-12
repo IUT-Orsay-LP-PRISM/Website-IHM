@@ -1,0 +1,258 @@
+.formes {
+  width: 100vw;
+  height: 100vh;
+}
+
+.forme__wrapper {
+  position: fixed;
+}
+.forme__wrapper--1 {
+  top: 0;
+  left: 0;
+}
+.forme__wrapper--2 {
+  left: -200px;
+  bottom: 50px;
+}
+.forme__wrapper--3 {
+  bottom: -300px;
+  right: -200px;
+}
+.forme__wrapper--4 {
+  bottom: 10px;
+  left: 400px;
+}
+.forme__wrapper--5 {
+  top: 20px;
+  right: 40px;
+}
+
+.btn {
+  border-radius: 10px;
+  background-color: #c065c5;
+  color: white;
+  padding: 0.9rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 21px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+.btn.--green {
+  background-color: #36C9A6;
+}
+.btn.--purple {
+  background: #8D46E9;
+}
+.btn.--blue {
+  background: #4FD4FE;
+}
+.btn.--red {
+  background: #FE6F4F;
+}
+.btn.--yellow {
+  background: #FEEC4F;
+  color: black;
+}
+
+.wrapper {
+  grid-template-areas: "title title" "draw cam" "draw outils";
+  padding: 1rem 4rem 0.3rem 4rem;
+  height: 100%;
+  box-sizing: border-box;
+  grid-template-columns: 4fr min-content;
+  grid-template-rows: min-content min-content 1fr;
+  display: grid;
+  grid-column-gap: 3.4rem;
+}
+.wrapper__title {
+  grid-area: title;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+.wrapper__title h1 {
+  font-family: "Comic Neue", sans-serif;
+  font-weight: 500;
+  margin: 0 1.4rem;
+  font-size: 35px;
+}
+.wrapper__title svg {
+  width: 50px;
+}
+.wrapper__drawbox {
+  grid-area: draw;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 18px -4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.wrapper__webcam {
+  grid-area: cam;
+}
+.wrapper__utils {
+  grid-area: outils;
+}
+
+.outils__title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.outils__btn {
+  margin-top: 1.3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+}
+.outils__box {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  margin-top: 1rem;
+}
+.outils__box__colors {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+.outils__box__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.col-box {
+  width: 4em;
+  height: 4em;
+  border: 8px solid white;
+  border-radius: 5px;
+}
+.col-box.--active {
+  border: 8px solid #FFD874;
+}
+.col-box-outils {
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#color-1 {
+  background-color: red;
+}
+
+#color-2 {
+  background-color: orange;
+}
+
+#color-3 {
+  background-color: gold;
+}
+
+#color-4 {
+  background-color: yellow;
+}
+
+#color-5 {
+  background-color: darkblue;
+}
+
+#color-6 {
+  background-color: blue;
+}
+
+#color-7 {
+  background-color: cyan;
+}
+
+#color-8 {
+  background-color: lightblue;
+}
+
+#color-9 {
+  background-color: darkgreen;
+}
+
+#color-10 {
+  background-color: green;
+}
+
+#color-11 {
+  background-color: lightgreen;
+}
+
+#color-12 {
+  background-color: white;
+}
+
+#color-13 {
+  background-color: black;
+}
+
+#color-14 {
+  background-color: darkgrey;
+}
+
+#color-15 {
+  background-color: grey;
+}
+
+#color-16 {
+  background-color: lightgrey;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #EBEBEB;
+  font-family: "Comic Neue", sans-serif;
+}
+
+body.home {
+  overflow: hidden;
+}
+
+main {
+  z-index: 9999;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+main h1 {
+  font-weight: 700;
+  font-size: 3.4rem;
+  margin-top: -63px;
+}
+
+.block {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 550px;
+  padding: 3rem;
+  border-radius: 5px;
+}
+.block__buttons {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  grid-gap: 1rem;
+}
+.block__buttons > a {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=main.css.map */
