@@ -1,3 +1,32 @@
+.formes {
+  width: 100vw;
+  height: 100vh;
+}
+
+.forme__wrapper {
+  position: fixed;
+}
+.forme__wrapper--1 {
+  top: 0;
+  left: 0;
+}
+.forme__wrapper--2 {
+  left: -200px;
+  bottom: 50px;
+}
+.forme__wrapper--3 {
+  bottom: -300px;
+  right: -200px;
+}
+.forme__wrapper--4 {
+  bottom: 10px;
+  left: 400px;
+}
+.forme__wrapper--5 {
+  top: 20px;
+  right: 40px;
+}
+
 .btn {
   border-radius: 10px;
   background-color: #c065c5;
@@ -33,11 +62,11 @@
 
 .wrapper {
   grid-template-areas: "title title" "draw cam" "draw outils";
-  padding: 1rem 4rem 2rem 4rem;
+  padding: 1rem 4rem 0.3rem 4rem;
   height: 100%;
   box-sizing: border-box;
   grid-template-columns: 4fr min-content;
-  grid-template-rows: min-content 1fr 1fr;
+  grid-template-rows: min-content min-content 1fr;
   display: grid;
   grid-column-gap: 3.4rem;
 }
@@ -75,6 +104,7 @@
   justify-content: flex-start;
 }
 .outils__btn {
+  margin-top: 1.3rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5rem;
@@ -82,11 +112,19 @@
 .outils__box {
   display: grid;
   grid-template-columns: 1fr min-content;
+  margin-top: 1rem;
 }
 .outils__box__colors {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
+}
+.outils__box__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .col-box {
@@ -95,7 +133,15 @@
   border: 8px solid white;
   border-radius: 5px;
 }
-
+.col-box.--active {
+  border: 8px solid #FFD874;
+}
+.col-box-outils {
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #color-1 {
   background-color: red;
 }
@@ -164,16 +210,15 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #EBEBEB;
-  height: 100%;
   font-family: "Comic Neue", sans-serif;
 }
 
 main {
+  z-index: 9999;
+  position: absolute;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  left: 50%;
+  right: 50%;
 }
 main h1 {
   font-weight: 700;
