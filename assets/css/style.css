@@ -58,11 +58,10 @@ html, body {
 }
 
 main {
+  position: absolute;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  left: 50%;
+  right: 50%;
 }
 main h1 {
   font-weight: 700;
