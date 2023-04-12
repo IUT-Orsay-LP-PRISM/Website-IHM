@@ -55,4 +55,36 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: .5rem;
   }
+  &__box{
+    display: grid;
+    grid-template-columns: 1fr min-content;
+  }
+  &__box__colors{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr );
+    grid-gap: 1rem;
+  }
 }
+
+$colors: [
+  red, orange, gold, yellow,
+  darkblue, blue, cyan, lightblue,
+  darkgreen, green, lightgreen, white,
+  black, darkgrey, grey, lightgrey,
+  purple, violet, pink, brown
+  #c065c5, #36C9A6, #8D46E9, #4FD4FE, #FE6F4F, #FEEC4F
+];
+
+.col-box{
+  width: 4em;
+  height: 4em;
+  border: 8px solid white;
+  border-radius: 5px;
+}
+
+@for $i from 1 through 16 {
+  #color-#{$i}{
+    background-color: nth($colors, $i);
+  }
+}
+
