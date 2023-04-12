@@ -79,6 +79,86 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5rem;
 }
+.outils__box {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+}
+.outils__box__colors {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
+.col-box {
+  width: 4em;
+  height: 4em;
+  border: 8px solid white;
+  border-radius: 5px;
+}
+
+#color-1 {
+  background-color: red;
+}
+
+#color-2 {
+  background-color: orange;
+}
+
+#color-3 {
+  background-color: gold;
+}
+
+#color-4 {
+  background-color: yellow;
+}
+
+#color-5 {
+  background-color: darkblue;
+}
+
+#color-6 {
+  background-color: blue;
+}
+
+#color-7 {
+  background-color: cyan;
+}
+
+#color-8 {
+  background-color: lightblue;
+}
+
+#color-9 {
+  background-color: darkgreen;
+}
+
+#color-10 {
+  background-color: green;
+}
+
+#color-11 {
+  background-color: lightgreen;
+}
+
+#color-12 {
+  background-color: white;
+}
+
+#color-13 {
+  background-color: black;
+}
+
+#color-14 {
+  background-color: darkgrey;
+}
+
+#color-15 {
+  background-color: grey;
+}
+
+#color-16 {
+  background-color: lightgrey;
+}
 
 html, body {
   margin: 0;
