@@ -31,5 +31,7 @@ canvas {
 }
 
 video {
-    display: none;
+    width: 300px;
+    height: auto;
+    transform: rotateY(180deg);
 }
