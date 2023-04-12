@@ -15,6 +15,7 @@ html, body {
 
 
 main {
+  z-index: 9999;
   position: absolute;
   height: 100vh;
   left: 50%;
