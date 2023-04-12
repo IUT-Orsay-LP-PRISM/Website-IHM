@@ -1,0 +1,66 @@
+.btn {
+  border-radius: 5px;
+  background-color: #c065c5;
+  color: white;
+  padding: 0.9rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 21px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+.btn.--green {
+  background-color: #36C9A6;
+}
+.btn.--purple {
+  background: #8D46E9;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #EBEBEB;
+  font-family: "Comic Neue", sans-serif;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main h1 {
+  font-weight: 700;
+  font-size: 3.4rem;
+  margin-top: -63px;
+}
+
+.block {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 550px;
+  padding: 3rem;
+  border-radius: 5px;
+}
+.block__buttons {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  grid-gap: 1rem;
+}
+.block__buttons > a {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=main.css.map */

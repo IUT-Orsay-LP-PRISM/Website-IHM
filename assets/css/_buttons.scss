@@ -1,0 +1,23 @@
+.btn{
+  border-radius: 5px;
+  background-color: #c065c5;
+  color: white;
+  padding: .9rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 21px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover{
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+
+  &.--green{
+    background-color: #36C9A6;
+  }
+  &.--purple{
+    background: #8D46E9;
+  }
+}
