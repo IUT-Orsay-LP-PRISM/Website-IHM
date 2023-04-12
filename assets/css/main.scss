@@ -1,5 +1,7 @@
 @import "components";
 @import "buttons";
+@import "wrapper";
+
 $lightGrey: #EBEBEB;
 $white: white;
 
@@ -7,6 +9,7 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: $lightGrey;
+  height: 100%;
   font-family: "Comic Neue", sans-serif;
 }
 
