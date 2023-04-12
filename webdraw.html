@@ -10,6 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+
+    <script src="js/scriptent.js"></script>
+    <script src="js/strokes.js"></script>
+    <link rel="stylesheet" href="stylent.css">
 </head>
 <body>
 <section class="wrapper">
@@ -18,10 +27,10 @@
         <h1>Fingering</h1>
     </div>
     <div class="wrapper__drawbox">
-        <canvas></canvas>
+        <canvas class="output_canvas" width="1280px" height="720px"></canvas>
     </div>
     <div class="wrapper__webcam">
-        <img src="assets/media/camDraw.png" alt="Webcam">
+        <video class="input_video"></video>
     </div>
     <div class="wrapper__utils">
         <!--

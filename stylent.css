@@ -3,35 +3,14 @@ body {
     text-align: center;
 }
 
-#main {
-	display: inline-block;
-    width: 1280px;
-    margin: auto;
-}
-
-#draw_area {
-    display: flex;
-}
-
-button {
-    background-color: white;
-    font-family: monospace;
-    border: solid 1px;
-}
-button:active{
-    background-color: black;
-    color: white;
-}
-
 canvas {
     flex: none;
-    border: solid 1px;
     margin: auto;
     transform: scaleX(-1);
 }
 
 video {
-    width: 300px;
+    width: 591px;
     height: auto;
     transform: rotateY(180deg);
 }
