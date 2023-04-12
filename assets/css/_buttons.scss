@@ -1,5 +1,5 @@
 .btn{
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #c065c5;
   color: white;
   padding: .9rem;
@@ -19,5 +19,15 @@
   }
   &.--purple{
     background: #8D46E9;
+  }
+  &.--blue{
+    background: #4FD4FE;
+  }
+  &.--red{
+    background: #FE6F4F;
+  }
+  &.--yellow{
+    background: #FEEC4F;
+    color: black;
   }
 }
