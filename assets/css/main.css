@@ -211,6 +211,9 @@ html, body {
   padding: 0;
   background-color: #EBEBEB;
   font-family: "Comic Neue", sans-serif;
+}
+
+body.home {
   overflow: hidden;
 }
 
