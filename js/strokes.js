@@ -23,9 +23,7 @@ class StrokeList {
 
     draw (context) {
         context.lineJoin = "round";
-        context.strokeStyle = "magenta";
-        context.shadowColor = "magenta";
-        context.shadowBlur = 10;
+        context.strokeStyle = "black";
         context.lineWidth = 5;
         for (const stroke of this.stroke_list) {
             if (stroke.length) {

@@ -78,6 +78,7 @@ function init() {
 
         if (gest == 1) {
             // the user is drawing
+            setOutilsType(1);
             context.globalAlpha = 1;
             // register point
             index_pos = finger_state.landmarks[fingers.index1];
@@ -93,7 +94,9 @@ function init() {
         }
 
         if (gest == 2) {
-            // the user is erasing
+            // the user is 
+            console.log("On erasing")
+            setOutilsType(2);
             context.globalAlpha = 1;
             // register erase
             idx = finger_state.landmarks[fingers.index1];
@@ -115,6 +118,21 @@ function init() {
         context.save();
         stroke_list.draw(context);
         context.restore();
+    }
+
+    function setOutilsType(type){
+        // 1 : write
+        // 2 : erase
+        let outilCrayon = document.querySelector('#crayon');
+        let outilGomme = document.querySelector('#gomme');
+
+        if (type === 1){
+            outilGomme.classList.remove('--active');
+            outilCrayon.classList.add('--active');
+        } else if (type === 2){
+            outilCrayon.classList.remove('--active');
+            outilGomme.classList.add('--active');
+        }
     }
 
     function processHands(results) {
