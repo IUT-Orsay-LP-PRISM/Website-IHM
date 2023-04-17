@@ -5,7 +5,7 @@ document.addEventListener("mousemove", e => {
   const y = e.clientY / window.innerHeight;
     
   formesWrapper.forEach(formeWrapper => {
-    const speed = 30;
+    const speed = -50;
 
     const xPosition = (x - 0.5) * speed;
     const yPosition = (y - 0.5) * speed;
