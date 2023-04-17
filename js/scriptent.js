@@ -27,7 +27,8 @@ const finger_state = {
     index: false,
     middle: false,
     ring: false,
-    little: false
+    little: false,
+    thumb: false
 }
 
 function gesture() {
@@ -35,24 +36,37 @@ function gesture() {
         0 : nothing
         1 : index up, drawing state
         2 : index and middle up, eraser state
+        3 : thumb, changing color
     */
     if (finger_state.index && !finger_state.middle && !finger_state.ring && !finger_state.little) {return 1;}
     if (finger_state.index && finger_state.middle && !finger_state.ring && !finger_state.little) {return 2;}
+    if (finger_state.thumb && !finger_state.index && !finger_state.middle && !finger_state.ring && !finger_state.little) {return 3;}
     return 0;
 }
 
+function download_points(stroke_list) {
+    const a = document.createElement("a");
+    const file = stroke_list.download();
+    a.href = URL.createObjectURL(file);
+    a.download = "data.txt";
+    a.click();
+}
 
 class Point {
     constructor(x,y) {
         this.x = x;
         this.y = y;
     }
+
     static distance(a,b) {
         return Math.hypot(a.x-b.x,a.y-b.y);
     }
 }
 
 function init() {
+    const download_button = document.querySelector('#download_button')
+    const clear_button = document.querySelector('#clear_button')
+    const dl_button = document.querySelector('#dl_button')
     const video = document.querySelector('video');
     const canvas = document.querySelector('canvas');
     const context = canvas.getContext('2d');
@@ -62,8 +76,15 @@ function init() {
 
     const erase_radius = 40.;
 
+    const draw_icon = new Image();
+    const erase_icon = new Image();
+    draw_icon.src = 'assets/draw.png';
+    erase_icon.src = 'assets/erase.png';
+
     let stroke_list = new StrokeList();
     let previous_pt = null;
+
+    let alreadyChangedColor = true;
 
     async function process() {
         context.save();
@@ -75,6 +96,8 @@ function init() {
         await hands.send({image: video});
 
         let gest = gesture();
+
+        // draw icons
 
         if (gest == 1) {
             // the user is drawing
@@ -109,9 +132,17 @@ function init() {
             context.strokeStyle = 'salmon';
             context.beginPath();
             context.arc(erase_pos.x, erase_pos.y, erase_radius, 0, 2*Math.PI);
-            context.stroke()
+            context.stroke();
         } else {
             context.globalAlpha = 0.2;
+        }
+
+        if (gest == 3 && !alreadyChangedColor) {
+            // the user is changing color
+            stroke_list.index += 1;
+            alreadyChangedColor = true;
+        }else if(gest != 3){
+            alreadyChangedColor = false;
         }
         context.restore();
 
@@ -143,6 +174,7 @@ function init() {
 
                 // update fingers state
                 finger_state.landmarks = landmarks;
+                finger_state.thumb = landmarks[fingers.thumb1].y < landmarks[fingers.thumb2].y && landmarks[fingers.thumb2].y < landmarks[fingers.thumb3].y && landmarks[fingers.thumb3].y < landmarks[fingers.thumb4].y && landmarks[fingers.thumb4].y < landmarks[fingers.thumb5].y;
                 finger_state.index = landmarks[fingers.index1].y < landmarks[fingers.index3].y;
                 finger_state.middle = landmarks[fingers.middle1].y < landmarks[fingers.middle3].y;
                 finger_state.ring = landmarks[fingers.ring1].y < landmarks[fingers.ring3].y;
@@ -152,8 +184,8 @@ function init() {
     }
 
     const hands = new Hands({locateFile: (file) => {
-        return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
-    }});
+            return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
+        }});
     hands.setOptions({
         selfieMode: false,
         maxNumHands: 1,
