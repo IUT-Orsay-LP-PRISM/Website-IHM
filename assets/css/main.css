@@ -27,6 +27,10 @@
   right: 40px;
 }
 
+.help {
+  text-align: left;
+}
+
 .btn {
   border-radius: 10px;
   background-color: #c065c5;
@@ -78,12 +82,12 @@
 }
 .wrapper__title h1 {
   font-family: "Comic Neue", sans-serif;
-  font-weight: 500;
-  margin: 0 1.4rem;
+  font-weight: 700;
+  margin: 1rem 1.4rem;
   font-size: 35px;
 }
-.wrapper__title svg {
-  width: 50px;
+.wrapper__title img {
+  width: 36px;
 }
 .wrapper__drawbox {
   grid-area: draw;
@@ -132,9 +136,14 @@
   height: 4em;
   border: 8px solid white;
   border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 .col-box.--active {
   border: 8px solid #FFD874;
+}
+.col-box:hover {
+  border: 8px solid #FEEC4F;
 }
 .col-box-outils {
   background-color: lightgrey;
