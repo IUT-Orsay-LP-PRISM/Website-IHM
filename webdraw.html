@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dessiner</title>
     <link rel="stylesheet" href="assets/css/main.css">
@@ -11,65 +12,70 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
 
-    <script src="js/scriptent.js"></script>
-    <script src="js/strokes.js"></script>
+    <script src="./assets/scripts/scriptent.js"></script>
+    <script src="./assets/scripts/strokes.js"></script>
     <link rel="stylesheet" href="stylent.css">
 </head>
+
 <body>
-<section class="wrapper">
-    <div class="wrapper__title">
-        <img src="assets/media/pen.svg" alt="Pen">
-        <h1>Fingering</h1>
-    </div>
-    <div class="wrapper__drawbox">
-        <canvas class="output_canvas" width="1280px" height="720px"></canvas>
-    </div>
-    <div class="wrapper__webcam">
-        <video class="input_video"></video>
-    </div>
-    <div class="wrapper__utils">
-        <div class="outils__box">
-            <div class="outils__box__items">
-                <div class="gomme col-box col-box-outils" id="gomme">
-                    <img src="assets/media/gomme.svg" alt="Gomme">
+    <div id="loader"></div>
+    <section class="wrapper">
+        <div class="wrapper__title">
+            <img src="assets/media/pen.svg" alt="Pen">
+            <h1>Fingering</h1>
+        </div>
+        <div class="wrapper__drawbox">
+            <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+        </div>
+        <div class="wrapper__webcam">
+            <video class="input_video"></video>
+        </div>
+        <div class="wrapper__utils">
+            <div class="outils__box">
+                <div class="outils__box__items">
+                    <div class="gomme col-box col-box-outils" id="gomme">
+                        <img src="assets/media/gomme.svg" alt="Gomme">
+                    </div>
+                    <div class="crayon col-box  col-box-outils" id="crayon">
+                        <img src="assets/media/crayon.svg" alt="Crayon">
+                    </div>
                 </div>
-                <div class="crayon col-box  col-box-outils" id="crayon">
-                    <img src="assets/media/crayon.svg" alt="Crayon">
+                <div class="outils__box__colors">
+                    <div id="color-1" class="col-box"></div>
+                    <div id="color-2" class="col-box"></div>
+                    <div id="color-3" class="col-box"></div>
+                    <div id="color-4" class="col-box"></div>
+
+                    <div id="color-5" class="col-box"></div>
+                    <div id="color-6" class="col-box"></div>
+                    <div id="color-7" class="col-box"></div>
+                    <div id="color-8" class="col-box"></div>
+
+                    <div id="color-9" class="col-box"></div>
+                    <div id="color-10" class="col-box"></div>
+                    <div id="color-11" class="col-box"></div>
+                    <div id="color-12" class="col-box"></div>
+
+                    <div id="color-13" class="col-box --active"></div>
+                    <div id="color-14" class="col-box"></div>
+                    <div id="color-15" class="col-box"></div>
+                    <div id="color-16" class="col-box"></div>
                 </div>
             </div>
-            <div class="outils__box__colors">
-                <div id="color-1" class="col-box"></div>
-                <div id="color-2" class="col-box"></div>
-                <div id="color-3" class="col-box"></div>
-                <div id="color-4" class="col-box"></div>
-
-                <div id="color-5" class="col-box"></div>
-                <div id="color-6" class="col-box"></div>
-                <div id="color-7" class="col-box"></div>
-                <div id="color-8" class="col-box"></div>
-
-                <div id="color-9" class="col-box"></div>
-                <div id="color-10" class="col-box"></div>
-                <div id="color-11" class="col-box"></div>
-                <div id="color-12" class="col-box"></div>
-
-                <div id="color-13" class="col-box --active"></div>
-                <div id="color-14" class="col-box"></div>
-                <div id="color-15" class="col-box"></div>
-                <div id="color-16" class="col-box"></div>
+            <div class="outils__btn">
+                <a href="#" class="btn --blue">Exporter</a>
+                <a href="#" class="btn --red">Effacer</a>
+                <a href="#" class="btn --yellow">Galerie</a>
             </div>
         </div>
-        <div class="outils__btn">
-            <a href="#" class="btn --blue">Exporter</a>
-            <a href="#" class="btn --red">Effacer</a>
-            <a href="#" class="btn --yellow">Galerie</a>
-        </div>
-    </div>
-</section>
+    </section>
 </body>
+
 </html>
