@@ -1,0 +1,11 @@
+canvas {
+    flex: none;
+    margin: auto;
+    transform: scaleX(-1);
+}
+
+video {
+    width: 458px;
+    height: auto;
+    transform: rotateY(180deg);
+}
