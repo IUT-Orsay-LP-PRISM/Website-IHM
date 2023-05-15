@@ -241,6 +241,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 40px;
   grid-row-gap: 30px;
+  padding-bottom: 4rem;
 }
 
 .box img {
