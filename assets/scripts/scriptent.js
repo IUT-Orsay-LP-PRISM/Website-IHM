@@ -60,6 +60,9 @@ function init() {
     const width = canvas.width;
     const height = canvas.height;
 
+    context.fillStyle = "white";
+    context.fillRect(0, 0, width, height);
+
     const erase_radius = 40.;
 
     let stroke_list = new StrokeList();
