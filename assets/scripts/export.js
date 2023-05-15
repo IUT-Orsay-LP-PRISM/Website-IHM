@@ -9,6 +9,7 @@ if (canva){
 if (excanva){
     excanva.addEventListener('click', () => {
         let canva = document.getElementById("myCanva");
+        canva.style.rotateX = "180deg";
         let dataURL = canva.toDataURL("image/jpeg");
         let date = new Date();
         let dateChaine = date.toLocaleString("fr-FR", {fractionalSecondDigits: 3});
