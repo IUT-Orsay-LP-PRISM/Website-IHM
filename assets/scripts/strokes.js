@@ -77,6 +77,8 @@ class StrokeList {
     }
 }
 
+
+
 // Takes an array of 2D coordinates and returns an array of 6D values (vx,vy,v,ax,ay,a)
 function transformData(data) {
     let new_data = [[0.,0.,0.,0.,0.,0.]];
