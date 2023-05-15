@@ -10,6 +10,8 @@
   grid-template-rows: min-content min-content 1fr;
   display: grid;
   grid-column-gap: 3.4rem;
+  position: relative;
+  z-index: 10;
 
   &__title{
     grid-area: title;
@@ -18,12 +20,12 @@
     align-items: center;
     h1{
       font-family: "Comic Neue", sans-serif;
-      font-weight: 500;
-      margin: 0 1.4rem;
+      font-weight: 700;
+      margin: 1rem 1.4rem;
       font-size: 35px;
     }
-    svg{
-      width: 50px;
+    img{
+      width: 36px;
     }
   }
 
@@ -89,8 +91,13 @@ $colors: [
   height: 4em;
   border: 8px solid white;
   border-radius: 5px;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
   &.--active{
     border: 8px solid #FFD874;
+  }
+  &:hover{
+    border: 8px solid #FEEC4F;
   }
   &-outils{
     background-color: lightgrey;

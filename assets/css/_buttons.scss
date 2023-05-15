@@ -30,4 +30,12 @@
     background: #FEEC4F;
     color: black;
   }
+  &.--back{
+    position: absolute;
+    right: 4rem;
+    top: 1rem;
+    background-color: white;
+    color: black;
+    z-index: 99999;
+  }
 }

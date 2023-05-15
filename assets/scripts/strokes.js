@@ -1,6 +1,8 @@
 class StrokeList {
     constructor() {
         this.stroke_list = [[]];
+        this.colors = ["blue","red","orange","green","pink"];
+        this.index = 0;
     }
 
     add_pt (pt) {
@@ -23,9 +25,8 @@ class StrokeList {
 
     draw (context) {
         context.lineJoin = "round";
-        context.strokeStyle = "magenta";
-        context.shadowColor = "magenta";
-        context.shadowBlur = 10;
+        context.strokeStyle = "black";
+        context.strokeStyle = this.colors[this.index % this.colors.length];
         context.lineWidth = 5;
         for (const stroke of this.stroke_list) {
             if (stroke.length) {
@@ -37,10 +38,6 @@ class StrokeList {
                 context.stroke();
             }
         }
-    }
-
-    download () {
-        return new Blob([JSON.stringify(this.stroke_list.flat(), null, 2)], {type: "text/plain"});
     }
 
     filter (criterion) {
