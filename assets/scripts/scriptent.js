@@ -27,8 +27,12 @@ const finger_state = {
     index: false,
     middle: false,
     ring: false,
-    little: false
+    little: false,
+    thumb: false
 }
+
+var color = "black";
+colors = ["blue","red","orange","green","pink"];
 
 function gesture() {
     /*
@@ -38,6 +42,7 @@ function gesture() {
     */
     if (finger_state.index && !finger_state.middle && !finger_state.ring && !finger_state.little) { return 1; }
     if (finger_state.index && finger_state.middle && !finger_state.ring && !finger_state.little) { return 2; }
+    if (!finger_state.index && !finger_state.middle && !finger_state.ring && finger_state.little) {return 3;}
     return 0;
 }
 
@@ -64,6 +69,8 @@ function init() {
 
     let stroke_list = new StrokeList();
     let previous_pt = null;
+
+    let alreadyChangedColor = true;
 
     async function process() {
         context.save();
@@ -113,10 +120,18 @@ function init() {
         } else {
             context.globalAlpha = 0.2;
         }
+
+        if (gest == 3 && !alreadyChangedColor) {
+            // the user is changing color
+            stroke_list.index += 1;
+            alreadyChangedColor = true;
+        }else if(gest != 3){
+            alreadyChangedColor = false;
+        }
         context.restore();
 
         context.save();
-        stroke_list.draw(context);
+        stroke_list.draw(context, color);
         context.restore();
     }
 

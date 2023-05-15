@@ -1,7 +1,6 @@
 class StrokeList {
     constructor() {
         this.stroke_list = [[]];
-        this.colors = ["blue","red","orange","green","pink"];
         this.index = 0;
     }
 
@@ -23,10 +22,10 @@ class StrokeList {
         }
     }
 
-    draw (context) {
+    draw (context, color) {
         context.lineJoin = "round";
-        context.strokeStyle = "black";
-        context.strokeStyle = this.colors[this.index % this.colors.length];
+        //context.strokeStyle = "black";
+        context.strokeStyle = color;
         context.lineWidth = 5;
         for (const stroke of this.stroke_list) {
             if (stroke.length) {
