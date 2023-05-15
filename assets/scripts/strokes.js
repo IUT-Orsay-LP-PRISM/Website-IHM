@@ -71,5 +71,4 @@ class StrokeList {
         }
         this.new_stroke();
     }
-
 }
