@@ -9,7 +9,9 @@ if (canva){
 if (excanva){
     excanva.addEventListener('click', () => {
         let canva = document.getElementById("myCanva");
-        canva.style.rotateX = "180deg";
+        var ctx = canva.getContext("2d");
+        var angle = 30; // définir l'angle de rotation en degrés
+        ctx.rotate(angle * Math.PI / 180);
         let dataURL = canva.toDataURL("image/jpeg");
         let date = new Date();
         let dateChaine = date.toLocaleString("fr-FR", {fractionalSecondDigits: 3});
