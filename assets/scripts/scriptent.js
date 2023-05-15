@@ -33,6 +33,7 @@ const finger_state = {
 
 var color = "black";
 colors = ["blue","red","orange","green","pink"];
+index = 0;
 
 function gesture() {
     /*
@@ -123,7 +124,7 @@ function init() {
 
         if (gest == 3 && !alreadyChangedColor) {
             // the user is changing color
-            stroke_list.index += 1;
+            index += 1;
             alreadyChangedColor = true;
         }else if(gest != 3){
             alreadyChangedColor = false;
@@ -131,7 +132,7 @@ function init() {
         context.restore();
 
         context.save();
-        stroke_list.draw(context, color);
+        stroke_list.draw(context, colors[index]);
         context.restore();
     }
 
