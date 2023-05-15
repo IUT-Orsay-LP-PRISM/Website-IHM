@@ -73,6 +73,8 @@ function init() {
 
         // draw video stream
         context.clearRect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = "white";
+        context.fillRect(0, 0, width, height);
 
         // draw hands
         await hands.send({ image: video });
