@@ -3,14 +3,15 @@ let canva = document.getElementById("myCanva");
 let clearCanva = document.querySelector("#erasecanva");
 
 if (canva){
-    var ctx = canva.getContext("2d");
+    let ctx = canva.getContext("2d");
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canva.width, canva.height);
 }
 if (clearCanva){
     clearCanva.addEventListener('click', () => {
-        let stroke = new StrokeList();
-        stroke.clear();
+        let ctx = canva.getContext("2d");
+        ctx.fillStyle = "white";
+        ctx.fillRect(0, 0, canva.width, canva.height);
     })
 }
 if (excanva){
