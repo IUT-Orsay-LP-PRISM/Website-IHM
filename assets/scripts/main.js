@@ -1,3 +1,5 @@
+
+
 const formesWrapper = document.querySelectorAll(".forme__wrapper");
 
 document.addEventListener("mousemove", e => {
@@ -13,3 +15,5 @@ document.addEventListener("mousemove", e => {
     formeWrapper.style.transform = `translate(${xPosition}px, ${yPosition}px)`;
   });
 });
+
+
