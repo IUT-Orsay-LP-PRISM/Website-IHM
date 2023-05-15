@@ -68,6 +68,8 @@ function init() {
     let stroke_list = new StrokeList();
     let previous_pt = null;
 
+    setListenerChangeColor(stroke_list);
+    
     async function process() {
         context.save();
 
@@ -123,6 +125,18 @@ function init() {
         context.save();
         stroke_list.draw(context);
         context.restore();
+    }
+
+
+    function setListenerChangeColor(stroke_list) {
+        const box_colors = document.querySelector('.outils__box__colors').children;
+
+        for (let i = 0; i < box_colors.length; i++) {
+            const div = box_colors[i];
+            div.addEventListener('click', () => {
+                stroke_list.changeColor(div.dataset.color)
+            })
+        }
     }
 
     function setOutilsType(type) {
