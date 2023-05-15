@@ -9,11 +9,7 @@ if (canva){
 }
 if (clearCanva){
     clearCanva.addEventListener('click', () => {
-        let ctx = canva.getContext("2d");
-        ctx.fillStyle = "white";
-        ctx.fillRect(0, 0, canva.width, canva.height);
-        let stroke = new StrokeList();
-        stroke.clear();
+        window.location.reload();
     })
 }
 if (excanva){
