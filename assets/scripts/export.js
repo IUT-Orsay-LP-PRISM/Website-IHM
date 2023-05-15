@@ -8,9 +8,11 @@ if (canva){
 }
 if (excanva){
     excanva.addEventListener('click', () => {
-        console.log(excanva)
         let canva = document.getElementById("myCanva");
         let dataURL = canva.toDataURL("image/jpeg");
+        let date = new Date();
+        let dateChaine = date.toLocaleString("fr-FR", {fractionalSecondDigits: 3});
+        localStorage.setItem("image_" + dateChaine + date, dataURL);
         let a = document.createElement("a");
         a.href = dataURL;
         a.download = "mon-dessin.jpg";
