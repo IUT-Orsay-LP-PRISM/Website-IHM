@@ -134,7 +134,9 @@ function init() {
         for (let i = 0; i < box_colors.length; i++) {
             const div = box_colors[i];
             div.addEventListener('click', () => {
-                stroke_list.changeColor(div.dataset.color)
+                stroke_list.changeColor(div.dataset.color);
+                document.querySelector('.outils__box__colors > .--active').classList.remove("--active");
+                div.classList.add("--active");
             })
         }
     }
