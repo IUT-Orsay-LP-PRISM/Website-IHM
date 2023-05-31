@@ -30,6 +30,11 @@ const finger_state = {
     little: false
 }
 
+const colors = ["#FF0000","#FFA500","#FFD700","#FFFF00",
+                "#00008B","#0000FF","#00FFFF","#ADD8E6",
+                "#006400","#008000","#90EE90","#FFFFFF",
+                "#000000","#A9A9A9","#808080","#D3D3D3"]
+
 function gesture() {
     /*
         0 : nothing
@@ -38,6 +43,7 @@ function gesture() {
     */
     if (finger_state.index && !finger_state.middle && !finger_state.ring && !finger_state.little) { return 1; }
     if (finger_state.index && finger_state.middle && !finger_state.ring && !finger_state.little) { return 2; }
+    if (!finger_state.index && !finger_state.middle && !finger_state.ring && finger_state.little) {return 3;}
     return 0;
 }
 
@@ -64,6 +70,8 @@ function init() {
     context.fillRect(0, 0, width, height);
 
     const erase_radius = 40.;
+
+    var alreadyChangedColor = false;
 
     let stroke_list = new StrokeList();
     let previous_pt = null;
@@ -119,6 +127,14 @@ function init() {
             context.stroke()
         } else {
             context.globalAlpha = 0.2;
+        }
+        if (gest == 3 && !alreadyChangedColor) {
+            // the user is changing color
+            stroke_list.index += 1;
+            alreadyChangedColor = true;
+            stroke_list.changeColor(colors[stroke_list.index]);
+        }else if(gest != 3){
+            alreadyChangedColor = false;
         }
         context.restore();
 
