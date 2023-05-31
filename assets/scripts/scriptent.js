@@ -132,7 +132,7 @@ function init() {
             // the user is changing color
             stroke_list.index += 1;
             alreadyChangedColor = true;
-            stroke_list.changeColor(colors[stroke_list.index]%15);
+            stroke_list.changeColor(colors[stroke_list.index  % 16]);
         }else if(gest != 3){
             alreadyChangedColor = false;
         }
