@@ -31,8 +31,6 @@ class StrokeList {
         context.lineJoin = "round";
         context.lineWidth = 5;
 
-        console.log(this.stroke_list);
-
         let i = 0;
         for (const stroke of this.stroke_list) {
             i++;

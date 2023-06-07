@@ -109,8 +109,7 @@ function init() {
         }
 
         if (gest == 2) {
-            // the user is 
-            console.log("On erasing")
+            // the user is
             setOutilsType(2);
             context.globalAlpha = 1;
             // register erase
@@ -133,6 +132,10 @@ function init() {
             stroke_list.index += 1;
             alreadyChangedColor = true;
             stroke_list.changeColor(colors[stroke_list.index  % 16]);
+
+            document.querySelector('.outils__box__colors > .--active').classList.remove("--active");
+            document.querySelector(`.outils__box__colors > [data-color='${colors[stroke_list.index  % 16]}']`).classList.add("--active");
+
         }else if(gest != 3){
             alreadyChangedColor = false;
         }
