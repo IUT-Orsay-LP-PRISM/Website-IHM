@@ -43,7 +43,7 @@ function gesture() {
     */
     if (finger_state.index && !finger_state.middle && !finger_state.ring && !finger_state.little) { return 1; }
     if (finger_state.index && finger_state.middle && !finger_state.ring && !finger_state.little) { return 2; }
-    if (!finger_state.index && !finger_state.middle && !finger_state.ring && finger_state.little) {return 3;}
+    if (!finger_state.middle && !finger_state.ring && finger_state.little) {return 3;}
     return 0;
 }
 
