@@ -1,17 +1,13 @@
 let excanva = document.querySelector('#exportcanva');
 let canva = document.getElementById("myCanva");
-let clearCanva = document.querySelector("#erasecanva");
 
 if (canva){
     let ctx = canva.getContext("2d");
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canva.width, canva.height);
 }
-if (clearCanva){
-    clearCanva.addEventListener('click', () => {
-        window.location.reload();
-    })
-}
+
+
 if (excanva){
     excanva.addEventListener('click', () => {
         let canva = document.getElementById("myCanva");

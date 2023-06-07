@@ -77,7 +77,15 @@ function init() {
     let previous_pt = null;
 
     setListenerChangeColor(stroke_list);
-    
+
+    let clearCanva = document.querySelector("#erasecanva");
+    if (clearCanva){
+        clearCanva.addEventListener('click', () => {
+            stroke_list = new StrokeList();
+        })
+    }
+
+
     async function process() {
         context.save();
 
