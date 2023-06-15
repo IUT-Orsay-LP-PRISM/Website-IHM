@@ -33,7 +33,7 @@ if (excanva){
         
         let date = new Date();
         let chaine = date.toISOString().slice(0, 10) + "-" + date.getDay() + "-" + date.toISOString().slice(11, 23).replace("T", "-");
-        localStorage.setItem("image_" + chaine, dataURL);
+        localStorage.setItem("image_" + chaine, canva.toDataURL("image/jpeg"));
         let a = document.createElement("a");
         a.href = dataURL;
         a.download = "mon-dessin.jpg";
